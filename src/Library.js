@@ -18,12 +18,15 @@ function addBook(library, yourBook) {
   return library.shelves[yourBook.genre].push(yourBook);
 }
 
+
 function checkoutBook(library, yourBook, genre) {
-  var bookSelected = unshelfBook(yourBook, library.shelves[genre]);
-  if (1 === 1) {
-    return `You have now checked out ${yourBook} from the ${library}`
+  for (i = 0; i <= library.shelves[genre].length; i++) {
+    if (library.shelves[genre].length === 0 || library.shelves[genre][i].title !== yourBook) {
+      return `Sorry, there are currently no copies of ${yourBook} available at the ${library.name}`
   } else {
-    return `Sorry, there are currently no copies of ${yourBook} available at the ${library}`
+    unshelfBook(yourBook, library.shelves[genre]);
+    return `You have now checked out ${yourBook} from the ${library.name}`
+  }
   }
 }
 
