@@ -13,7 +13,12 @@ function buildMainCharacter(name, age, pronouns) {
 
 function saveReview(yourReview, holdReview) {
   // var getReview = element => element.title === yourBook;
-  holdReview.push(yourReview);
+  if (holdReview.includes(yourReview)) {
+   return
+ } else {
+   holdReview.push(yourReview);
+ }
+ return holdReview;
   return holdReview;
 }
 
