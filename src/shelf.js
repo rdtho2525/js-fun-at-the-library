@@ -17,16 +17,22 @@ function unshelfBook(yourBook, shelf) {
 }
 
 function listTitles(shelf) {
-  var shelfTitles = [];
+  var shelfTitles = '';
   for (var i = 0; i < shelf.length; i++) {
-    shelfTitles.push(shelf[i].title);
+    if (i < (shelf.length - 1)) {
+      shelfTitles += shelf[i].title + ', '
+    } else {
+      shelfTitles += shelf[i].title
+    };
   }
   return shelfTitles;
 }
 
 function searchShelf(shelf, yourBook) {
   for (var i = 0; i < shelf.length; i++){
-    if(shelf[i].title === yourBook){
+    if(shelf[i].title !== yourBook && i < (shelf.length - 1)){
+      continue
+    } else if (shelf[i].title === yourBook){
       return true
     } else {
       return false
