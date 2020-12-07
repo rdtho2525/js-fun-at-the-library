@@ -10,6 +10,15 @@ class Librarian {
         return `Hello, ${patron}!`
       }
     };
+    // this.findBook = function(yourBook) {
+    //   for (var i = 0; i < this.library.shelves[yourBook.genre].length; i++) {
+    //     if (librarian.library.shelves[yourBook.genre][i].title === yourBook) {
+    //       return `Yes, we have ${yourBook}`
+    //     } else {
+    //       return `Sorry, we do not have ${yourBook}`
+    //     }
+    //   }
+    // };
   }
 }
 
