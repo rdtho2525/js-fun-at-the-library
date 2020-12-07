@@ -2,12 +2,9 @@ class Librarian {
   constructor(name, library) {
     this.name = name;
     this.library = library;
-  }
-}
-
-function createLibrary(libraryName) {
-  var localLibrary = {
-    name: libraryName
+    this.greetPatron = function(patron) {
+      return `Hello, ${patron}!`;
+    };
   }
 }
 
